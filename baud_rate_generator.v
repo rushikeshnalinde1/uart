@@ -13,7 +13,7 @@ reg [15:0] counter_rx;
 parameter divisor_tx = clk_freq/baud_rate;
 parameter divisor_rx = clk_freq/(16*baud_rate);
 
-always @(posedge clock or posedge reset)
+always @(posedge clock)
 begin 
 	if(reset)
 		begin
@@ -32,7 +32,7 @@ begin
 		end
 end
 
-always @(posedge clock or posedge reset)
+always @(posedge clock)
 begin 
 	if(reset)
 		begin
@@ -51,5 +51,6 @@ begin
 		end
 end
 endmodule
+
 
 
